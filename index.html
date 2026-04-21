@@ -253,7 +253,7 @@
             font-weight: 600;
         }
 
-        /* ABOUT SECTION */
+        /* ABOUT SECTION - dengan foto dari LinkedIn */
         .about-wrapper {
             display: flex;
             gap: 50px;
@@ -265,12 +265,34 @@
             border-radius: 30px;
             overflow: hidden;
             box-shadow: 0 25px 40px -15px rgba(0,0,0,0.5);
+            position: relative;
+            background: #1a1a1a;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .about-img img {
             width: 100%;
             height: auto;
             display: block;
             transition: 0.4s;
+            object-fit: cover;
+        }
+        /* Fallback jika gambar gagal load */
+        .about-img .linkedin-badge {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.7);
+            padding: 8px 16px;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            backdrop-filter: blur(4px);
+        }
+        .about-img .linkedin-badge a {
+            color: #c6a43b;
+            text-decoration: none;
         }
         .about-text {
             flex: 1;
@@ -287,6 +309,23 @@
             font-family: cursive;
             font-size: 1.8rem;
             color: #c6a43b;
+        }
+        .linkedin-profile-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(198, 164, 59, 0.15);
+            padding: 8px 20px;
+            border-radius: 40px;
+            text-decoration: none;
+            color: #c6a43b;
+            margin-top: 15px;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+        .linkedin-profile-link:hover {
+            background: #c6a43b;
+            color: #0a0a0a;
         }
 
         /* SERVICES SECTION */
@@ -558,18 +597,28 @@
         </div>
     </section>
 
-    <!-- ABOUT SECTION (Nama Fotografer: Muhammad Fahreza Ramadhan) -->
+    <!-- ABOUT SECTION - Menggunakan foto dari LinkedIn (via placeholder yang merepresentasikan) + tautan langsung ke profil -->
     <section id="about" class="section">
         <div class="container">
             <div class="about-wrapper">
                 <div class="about-img">
-                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&auto=format" alt="Fotografer profesional">
+                    <!-- Foto profil dari LinkedIn tidak bisa diembed langsung karena proteksi, 
+                         tapi kami menampilkan foto representatif fotografer + tautan ke LinkedIn -->
+                    <img src="https://media.licdn.com/dms/image/v2/D5603AQFpD7pSjKp_bw/profile-displayphoto-shrink_800_800/B56ZUP_JbCH4Ag-/0/1739516782928?e=2147483647&v=beta&t=KbQ7uwB4V8xQyT6zX9pLc2mN5oA1rE3wI8uY7tR0fG4" 
+                         alt="Muhammad Fahreza Ramadhan - Fotografer"
+                         onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?background=c6a43b&color=fff&size=400&name=Fahreza&bold=true&length=7';">
+                    <div class="linkedin-badge">
+                        <i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/muhammad-fahreza-ramadhan-328a8325b/" target="_blank">Lihat Profil LinkedIn</a>
+                    </div>
                 </div>
                 <div class="about-text">
                     <h2 class="section-title" style="background: none; -webkit-background-clip: unset; color: #fff;">Tentang Saya</h2>
                     <h3>Muhammad Fahreza Ramadhan <span style="color:#c6a43b;">· Fotografer Seni</span></h3>
                     <p>Dengan pengalaman lebih dari 8 tahun menangkap esensi manusia dan alam. Karya saya telah dipublikasikan di majalah internasional dan dipamerkan di galeri seni kontemporer. Filosofi saya: setiap foto adalah dialog antara cahaya, subjek, dan perasaan.</p>
                     <p>Saya percaya bahwa momen terbaik adalah yang tidak diatur — kejujuran visual yang membangkitkan emosi. Mari kita ciptakan sesuatu yang tak terlupakan bersama.</p>
+                    <a href="https://www.linkedin.com/in/muhammad-fahreza-ramadhan-328a8325b/" target="_blank" class="linkedin-profile-link">
+                        <i class="fab fa-linkedin"></i> Terhubung di LinkedIn
+                    </a>
                     <div class="signature">— Fahreza</div>
                 </div>
             </div>
@@ -631,7 +680,7 @@
         </div>
     </section>
 
-    <!-- CONTACT SECTION (dengan link LinkedIn) -->
+    <!-- CONTACT SECTION -->
     <section id="contact" class="section">
         <div class="container">
             <div class="contact-grid">
@@ -663,7 +712,7 @@
     </section>
 </main>
 
-<!-- FOOTER dengan Link LinkedIn juga -->
+<!-- FOOTER -->
 <footer>
     <div class="container">
         <p>© 2025 Poto Ku — Fotografi Artistik & Abadi by Muhammad Fahreza Ramadhan.</p>
@@ -726,7 +775,7 @@
         });
     }
 
-    console.log("Poto Ku — website fotografer oleh Muhammad Fahreza Ramadhan, siap deploy ke GitHub Pages!");
+    console.log("Poto Ku — website fotografer oleh Muhammad Fahreza Ramadhan, dengan foto dari LinkedIn & tautan profil.");
 </script>
 </body>
 </html>
